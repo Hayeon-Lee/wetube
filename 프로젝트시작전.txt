@@ -1,0 +1,26 @@
+[package.json]
+* 프로젝트를 동작시킬 때 필요한 모듈들이 포함되어 있음
+
+[dependencies]
+* 프로젝트가 동작할 때 반드시 필요한 모듈들의 정보
+
+[devDependencies]
+* 코딩을 할 때 도움이 되는 (사람에게 필요한) 모듈들의 정보
+* npm install --save-dev 
+    * --save-dev의 역할: npm i 뒤에 이 옵션을 붙여주면 설치되는 패키지들은 package.json의 devDependencies에 적히게 됨.
+    * 만약 위의 옵션을 추가하지 못하더라도 package.json에서 dependencies에 적혀있는 정보들을 수작업으로 devdependencies에 옮기면 됨
+
+[babel]
+* 기능: 코더가 작성한 자바스크립트 코드를 안정적인(이해 가능한) 자바스크립트로 변환해줌
+* 설치 후: babel.config.json 파일을 작성, 바벨이 알아서 이 config파일을 찾아 이 파일을 설정기반으로 작동
+* @babel/preset-env: 최신의 자바스크립트를 타겟 환경에서 사용할 수 있도록 만들어 줌
+* @babel/core: 바벨이 작동하기 위한 핵심 기능이 들어있음
+* @babel/node: Node.js 클라이언트 환경과 똑같은 CLI를 제공, 명령 실행 전 Babel의 사전 설정(presets)및 플러그인을 사용해 컴파일 한 뒤 실행까지 자동으로 해줌
+             //메모리 부하가 심하므로 배포용으로 권장하지 않습니다.
+
+[nodemon]
+* 코드가 수정되면 알아서 nodejs 서버를 재시작하여 실행하게 만들어줌
+
+[명령어 해석]
+babel-node index.js //최신 문법 코드로 index.js를 실행하게 만든다
+nodemon --exec babel-node index.js //index.js를 수정할 때마다 nodemon이 알아서 재실행하므로, npm run dev를 한 번만 실행해도 됨
