@@ -1,4 +1,4 @@
-# 유튜브 클론 코딩
+# youtube clone coding
 
 [글로벌 라우터]
 / -> Home
