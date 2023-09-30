@@ -24,3 +24,6 @@
 [명령어 해석]
 babel-node index.js //최신 문법 코드로 index.js를 실행하게 만든다
 nodemon --exec babel-node index.js //index.js를 수정할 때마다 nodemon이 알아서 재실행하므로, npm run dev를 한 번만 실행해도 됨
+
+[라우터]
+url을 우리가 하나하나 다 지정해서 적어줄 필요 없이, 방을 만들어주는 느낌!
