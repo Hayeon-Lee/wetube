@@ -22,13 +22,13 @@
 
 [비디오 라우터]
 
-/video/:id -> see video
+/videos/:id -> see video
 
-/video/:id/edit -> edit video
+/videos/:id/edit -> edit video
 
-/video/:id/delete -> delete video
+/videos/:id/delete -> delete video
 
-/video/upload -> upload video
+/videos/upload -> upload video
 
 [나중에 할 일]
 
