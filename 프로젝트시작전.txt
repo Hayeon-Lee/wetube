@@ -33,3 +33,5 @@ nodejs가 시작되는 곳 == package.json 이 있는 곳
 
 [pug]
 안에 자바스크립트를 작성해도 유저에게 전달되지 않는다
+include 를 통해 pug의 파일을 그대로 사용 가능하다
+extends 를 통해 타 pug 파일을 확장한다(상속과 비슷)
