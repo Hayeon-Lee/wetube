@@ -14,6 +14,9 @@ app.set("views", process.cwd() + "/src/views");
 const logger = morgan("dev");
 app.use(logger);
 
+app.use(express.urlencoded({ extended: true }));
+//post에 body 속성이 추가되고 저장된다
+
 app.use("/", globalRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);
