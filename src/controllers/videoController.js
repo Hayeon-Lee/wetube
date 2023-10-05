@@ -26,7 +26,7 @@ let videos = [
 ];
 
 export const trending = (req, res) => {
-  res.render("home", { pageTitle: "Home", fakeUser: fakeUser, videos }); //name of my View, variables
+  res.render("home", { pageTitle: "Home", videos }); //name of my View, variables
 };
 export const watch = (req, res) => {
   const { id } = req.params;
@@ -39,7 +39,12 @@ export const getEdit = (req, res) => {
   return res.render("edit", { pageTitle: `Editing ${video.title}`, video });
 };
 
-export const postEdit = (req, res) => {};
+export const postEdit = (req, res) => {
+  const { id } = req.params;
+  const { title } = req.body;
+  videos[id - 1].title = title;
+  return res.redirect(`/videos/${id}`);
+};
 
 //export const search = (req, res) => res.send("Search");
 //export const upload = (req, res) => res.send("Upload");
