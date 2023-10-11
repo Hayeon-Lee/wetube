@@ -32,7 +32,7 @@ back-end: NodeJS, MongoDB, Express
 |/videos/:id/delete|비디오 삭제|
 
 ---
-### 프로그램 파일 구조
+### 프로그램 파일 설명
 
 * server.js
 
@@ -80,5 +80,15 @@ back-end: NodeJS, MongoDB, Express
 
     * Video.js에서 mongodb에 저장될 데이터의 스키마를 정의한다. 또는 전역적으로 사용 가능한 static 함수도 정의되어있다. 이 스키마를 이용하여 Video 라는 model 생성 후 export 한다.
 
+---
+### 코드로 보는 프로그램 실행 흐름
 
+1) init.js에서 서버를 실행, db.js에서 몽고db 서버를 실행하고 연결
 
+2) model의 Video.js 에서 몽고db에 저장할 Video 데이터의 스키마를 정의하고 모델 export -> 컨트롤러에서 이를 import 하여 몽고디비 함수로 디비에 데이터 저장
+
+3) server.js에서 기본 라우팅 주소(/, /videos, /users)의 라우터 연결 -> 각 해당 라우터 파일에서 세부 라우팅 주소를 정의하고 컨트롤러 연결 -> 컨트롤러에서 res.render("pug파일이름", {전달내용})으로 화면 반환
+
+4) pug 파일에서 form(method='POST') 하면 form 제출 내용이 해당 주소로 post 요청됨. 주소를 바꾸고 싶다면 form(method='POST', action="원하는주소")로 코드 수정하면 됨.
+
+5) 라우터 파일에서 세부 라우팅 주소에 get과 post일 때 작동할 컨트롤러를 연결할 수 있음. 
